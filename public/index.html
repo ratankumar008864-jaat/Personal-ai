@@ -1,1 +1,58 @@
-
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="Personal AI - आपका अपना AI असिस्टेंट">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <title>Personal AI</title>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="logo">✦</div>
+      <div><h1>Personal AI</h1><p>तुम्हारा अपना AI असिस्टेंट</p></div>
+      <button id="newChat" class="icon-button" title="नई चैट" aria-label="नई चैट">＋</button>
+    </header>
+    <nav class="tabs" aria-label="फीचर">
+      <button class="tab active" id="chatTab" type="button">💬 AI चैट</button>
+      <button class="tab" id="videoTab" type="button">🎬 AI वीडियो मेकर</button>
+    </nav>
+    <section id="chatPanel" class="panel">
+    <section id="messages" class="messages" aria-live="polite">
+      <div class="welcome" id="welcome">
+        <div class="big-spark">✦</div>
+        <h2>नमस्ते! मैं Personal AI हूँ 👋</h2>
+        <p>मुझसे पढ़ाई, सामान्य ज्ञान या किसी भी सवाल के बारे में पूछो।</p>
+        <div class="suggestions">
+          <button class="suggestion">प्रकाश संश्लेषण क्या है?</button>
+          <button class="suggestion">मुझे अंग्रेज़ी सिखाओ</button>
+          <button class="suggestion">एक छोटी कहानी सुनाओ</button>
+        </div>
+      </div>
+    </section>
+    <form id="chatForm" class="composer">
+      <textarea id="prompt" rows="1" placeholder="अपना सवाल यहाँ लिखो…" aria-label="अपना सवाल लिखें" required></textarea>
+      <button id="send" type="submit" aria-label="भेजें">➤</button>
+    </form>
+    </section>
+    <section id="videoPanel" class="video-panel" hidden>
+      <div class="video-heading"><div class="video-icon">🎬</div><h2>AI वीडियो मेकर</h2><p>जो वीडियो चाहिए, उसका वर्णन लिखो। Personal AI उसे वीडियो में बदलने की कोशिश करेगा।</p></div>
+      <form id="videoForm" class="video-form">
+        <label for="videoPrompt">वीडियो में क्या दिखाना है?</label>
+        <textarea id="videoPrompt" rows="4" maxlength="1200" placeholder="जैसे: पहाड़ों के ऊपर उड़ता हुआ एक सुनहरा ड्रैगन, सिनेमैटिक रोशनी, 5 सेकंड…" required></textarea>
+        <p class="hint">जितना साफ़ वर्णन लिखोगे, परिणाम उतना बेहतर हो सकता है।</p>
+        <button id="generateVideo" type="submit" class="generate-button">✨ वीडियो बनाओ</button>
+      </form>
+      <div id="videoStatus" class="video-status" aria-live="polite"></div>
+      <div id="videoResult" class="video-result" hidden></div>
+      <p class="video-note">नोट: असली AI वीडियो बनाने के लिए वीडियो मॉडल की API key चाहिए। यह सेवा मुफ्त और असीमित होने की गारंटी नहीं है।</p>
+    </section>
+    <p class="footnote">Personal AI गलत जवाब भी दे सकता है। ज़रूरी जानकारी जाँच लें।</p>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
